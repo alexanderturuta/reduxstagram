@@ -13,7 +13,14 @@ const defaultState = {
     comments
 };
 
-const store = createStore(rootReducer, defaultState);
+// enable Redux Dev Tools
+const enhancers = compose(
+    window.devToolsExtension
+        ? window.devToolsExtension()
+        : f => f
+)
+
+const store = createStore(rootReducer, defaultState, enhancers);
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
