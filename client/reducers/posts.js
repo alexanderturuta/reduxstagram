@@ -7,7 +7,7 @@ function posts(state = [], action) {
             return [
                 ...state.slice(0, index),
                 {
-                    ...state[index], likes: state[index].likes + 1
+                    ...state[index], likes: state[index].likes + 10
                 },
                 ...state.slice(index + 1)
             ];
